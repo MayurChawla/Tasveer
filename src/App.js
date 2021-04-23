@@ -1,4 +1,5 @@
 import './App.css';
+import UploadForm from './display/UploadForm';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <p className="hero-quote">
             Add your home or family pics to your profile.
           </p>
+          <UploadForm/>
         </header>
     </div>
   );

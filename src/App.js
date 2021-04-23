@@ -1,8 +1,13 @@
+import React, {useState} from 'react';
 import './App.css';
 import ImageGrid from './display/ImageGrid';
+import Modal from './display/Modal';
 import UploadForm from './display/UploadForm';
 
 function App() {
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <div className="App">
         <nav className="navigation">
@@ -17,7 +22,8 @@ function App() {
             Add your home or family pics to your profile.
           </p>
           <UploadForm />
-          <ImageGrid />
+          <ImageGrid setSelectedImage={setSelectedImage}/>
+          {selectedImage && <Modal selectedImage={selectedImage} />}
         </header>
     </div>
   );

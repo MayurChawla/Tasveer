@@ -13,7 +13,35 @@ body {
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
-
+/* progressbar style */
+.progressbar {
+  height:3px;
+  background-color: var(--primary-color);
+  margin-top: 20px;
+}
+.imagegrid {
+  max-width: 80%;
+  margin : 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.image-wrap {
+  overflow: hidden;
+  height: 0px;
+  padding : 50% 0;
+  /* padding controls height, willa always be square regardless of width */
+  position : relative;
+  opacity : 0.8;
+}
+.image-wrap img {
+  min-height: 100%;
+  min-width: 100%;
+  max-width: 150%;
+  position : absolute;
+  top:0;
+  left:0;
+}
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

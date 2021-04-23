@@ -15,6 +15,7 @@ import 'firebase/firestore';
 
   const projectStorage = firebase.storage(); //projectstorage is for uploading images to cloud fb storage
   const projectFirestore = firebase.firestore();//projectstorage is for database to cloud fb
+  const timestamp = firebase.firestore.FieldValue.serverTimestamp;
   
   //exporting variables to use these in other files.
-  export { projectStorage, projectFirestore};
+  export { projectStorage, projectFirestore, timestamp};

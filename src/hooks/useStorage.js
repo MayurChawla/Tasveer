@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {projectStorage} from '../firebase/firebaseconfig';
+import {projectStorage, projectFirestore, timestamp } from '../firebase/firebaseconfig';
 
 const useStorage = (file) => {
     const [progress, setProgress] = useState(0);
@@ -9,6 +9,7 @@ const useStorage = (file) => {
     useEffect(()=> {
         //Refrence to save file (in project storage) and that the file should have this file.name inside the default bucket
         const storageRef = projectStorage.ref(file.name);
+        const collectionRef = projectFirestore.collection('images');//if there is no collection with this name images than firebase will create it automatically
         
         //asynchronous method to upload the file to the above reference(projectStorage.ref)
         //this state change can happen 5 or 6 times during upload 
@@ -19,6 +20,8 @@ const useStorage = (file) => {
             setError(err);              //gonna trigger when there is some error with the upload
         }, async ()=>{
             const urls = await storageRef.getDownloadURL();//This is gonna fire when the upload is fully complete // we are gonna mark this function async because we are going to use await inside this function 
+            const createdAt = timestamp();
+            collectionRef.add({url:urls, createdAt });
             setUrl(urls);
         })
     }, [file]);

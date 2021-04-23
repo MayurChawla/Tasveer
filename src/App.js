@@ -1,4 +1,5 @@
 import './App.css';
+import ImageGrid from './display/ImageGrid';
 import UploadForm from './display/UploadForm';
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
           <p className="hero-quote">
             Add your home or family pics to your profile.
           </p>
-          <UploadForm/>
+          <UploadForm />
+          <ImageGrid />
         </header>
     </div>
   );

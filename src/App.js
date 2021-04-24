@@ -24,6 +24,7 @@ function App() {
           <UploadForm />
           <ImageGrid setSelectedImage={setSelectedImage}/>
           {selectedImage && <Modal selectedImage={selectedImage} setSelectedImage={setSelectedImage} />}
+          <footer className="footer"> All Rights Reserved</footer>
         </header>
     </div>
   );

@@ -13,6 +13,39 @@ body {
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
+
+/* uploadButton */
+.uploadButton input[type=file]::file-selector-button {
+  height: 50px;
+  width: 50px;
+  background-color: var(--primary-color);
+  color:var(--error-color);
+  border-radius : 50%;
+}
+
+label input{
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+label{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  margin: 10px auto;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 24px;
+}
+label:hover{
+  background: var(--primary-color);
+  color: white;
+}
+
+
+
 /* progressbar style */
 .progressbar {
   height:3px;

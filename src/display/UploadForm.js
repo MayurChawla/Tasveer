@@ -22,12 +22,16 @@ const UploadForm = () => {
 
     return (
         <form>
-            <input type="file" onChange={selectFilesFun}/>
+            <label>
+                <input type="file" onChange={selectFilesFun}/>
+                <span>+</span>
+            </label>
             <div className="output">
                 {error && <div className="error">{error}</div>}
                 {file && <div className="file">{file.name}</div>}
                 {file && <ProgressBar file={file} setFile={setFile}/>}
             </div>
+            
         </form>
     )
 }

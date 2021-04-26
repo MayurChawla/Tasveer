@@ -27,9 +27,17 @@
   border: 1px solid var(--primary-color);
   margin: 0 auto;
   max-width : 90%;
-}
-/* Header */
 
+/* Header */}
+/* Footer */
+.footer {
+  display: block;
+  padding: 3rem 1rem;
+  background-color: var(--light-color);
+}
+.footer-sitename {
+  color : var(--primary-color);
+}
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
